@@ -8,7 +8,6 @@ import {
   thOptionOrder,
   thPlatformMap,
 } from '../../helpers/constants';
-import { withPushes } from '../context/Pushes';
 import { getGroupMapKey } from '../../helpers/aggregateId';
 import { getAllUrlParams, getUrlParam } from '../../helpers/location';
 import JobModel from '../../models/job';
@@ -17,6 +16,10 @@ import RunnableJobModel from '../../models/runnableJob';
 import { getRevisionTitle } from '../../helpers/revision';
 import { getPercentComplete } from '../../helpers/display';
 import { notify } from '../redux/stores/notifications';
+import {
+  updateJobMap,
+  recalculateUnclassifiedCounts,
+} from '../redux/stores/pushes';
 
 import FuzzyJobFinder from './FuzzyJobFinder';
 import { Revision } from './Revision';
@@ -550,7 +553,11 @@ Push.propTypes = {
   pushHealthVisibility: PropTypes.string.isRequired,
 };
 
+const mapStateToProps = ({ pushes: { allUnclassifiedFailureCount } }) => ({
+  allUnclassifiedFailureCount,
+});
+
 export default connect(
-  null,
-  { notify },
-)(withPushes(Push));
+  mapStateToProps,
+  { notify, updateJobMap, recalculateUnclassifiedCounts },
+)(Push);
