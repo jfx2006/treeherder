@@ -88,7 +88,7 @@
     "eslint-plugin-jest": "22.6.4",
     "eslint-plugin-jsx-a11y": "6.2.1",
     "eslint-plugin-prettier": "3.1.0",
-    "eslint-plugin-react": "7.13.0",
+    "eslint-plugin-react": "7.14.2",
     "fetch-mock": "7.3.3",
     "jest": "24.8.0",
     "jest-dom": "3.5.0",
