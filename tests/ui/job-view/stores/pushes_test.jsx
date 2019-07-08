@@ -3,15 +3,15 @@ import { fetchMock } from 'fetch-mock';
 import { Provider } from 'react-redux';
 import { render, cleanup, waitForElement } from '@testing-library/react';
 
-import { getProjectUrl } from '../../../../../ui/helpers/location';
-import { PushesClass } from '../../../../../ui/job-view/context/Pushes';
-import FilterModel from '../../../../../ui/models/filter';
-import pushListFixture from '../../../mock/push_list';
-import jobListFixtureOne from '../../../mock/job_list/job_1';
-import jobListFixtureTwo from '../../../mock/job_list/job_2';
-import { store } from '../../../../../ui/job-view/redux/store';
-import PushList from '../../../../../ui/job-view/pushes/PushList';
-import { PinnedJobs } from '../../../../../ui/job-view/context/PinnedJobs';
+import { getProjectUrl } from '../../../../ui/helpers/location';
+import { PushesClass } from '../../../../ui/job-view/context/Pushes';
+import FilterModel from '../../../../ui/models/filter';
+import pushListFixture from '../../mock/push_list';
+import jobListFixtureOne from '../../mock/job_list/job_1';
+import jobListFixtureTwo from '../../mock/job_list/job_2';
+import { store } from '../../../../ui/job-view/redux/store';
+import PushList from '../../../../ui/job-view/pushes/PushList';
+import { PinnedJobs } from '../../../../ui/job-view/context/PinnedJobs';
 
 afterEach(cleanup);
 
